@@ -1,0 +1,10 @@
+<ul>
+    <li *ngFor="let score of scores; index as i; trackBy: trackByFn" [ngClass]="{'new-score' : newScore === score._id}">
+        <span class="score">{{ score.score }}
+            <span *ngIf="score.score > 1" >pts</span>
+            <span *ngIf="score.score < 2" >pt</span>
+        </span>
+        {{ score.user }} -
+        {{ score.creationDate | date:'dd/MM/yyyy  HH:mm:ss' }} 
+    </li>
+</ul>

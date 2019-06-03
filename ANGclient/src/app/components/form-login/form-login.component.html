@@ -1,0 +1,9 @@
+<form autocomplete="off" novalidate [formGroup]="form" (submit)="submitForm()">
+  <label for="email-login">Email</label>
+  <input type="email" name="email-login" id="email-login" required minlength="5" formControlName = "email">
+
+  <label for="password-login">Mot de passe</label>
+  <input type="password" name="password-login" id="password-login" required minlength="5" formControlName = "password">
+
+  <button type="submit" [disabled]='!form.valid'>Connexion</button>
+</form>

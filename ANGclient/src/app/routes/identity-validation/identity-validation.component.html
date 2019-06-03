@@ -1,0 +1,13 @@
+<h2>Validation de votre identité</h2>
+<form [formGroup]="form" (submit)="submitForm()">
+  <label for="password">Quel est votre mot de passe ?</label>
+  <input type="password" name="password" id="password" required minlength="5" formControlName = "password">
+  <button type="submit" [disabled]='!form.valid'>Valider</button>
+</form>
+
+<app-form-response
+  *ngIf="displayReturn"
+  [content]="apiMessage"
+  [class]="messageClass"
+  (close)="displayReturn = false"
+></app-form-response>

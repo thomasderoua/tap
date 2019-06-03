@@ -1,0 +1,18 @@
+<form autocomplete="off" novalidate [formGroup]="form" (submit)="submitForm()">
+  <label for="email-register">Email</label>
+  <input type="email" name="email-register" id="email-register" required minlength="5" formControlName = "email">
+
+  <label for="first_name-register">Prénom</label>
+  <input type="text" name="first_name-register" id="first_name-register" required minlength="5" formControlName = "first_name">
+
+  <label for="last_name-register">Nom de famille</label>
+  <input type="text" name="last_name-register" id="last_name-register" required minlength="5" formControlName = "last_name">
+
+  <label for="password-register">Mot de passe</label>
+  <input type="password" name="password-register" id="password-register" required minlength="5" formControlName = "password">
+
+  <label for="securePassword">Répéter le mot de passe <span *ngIf="passwordError">Incorrect</span></label>
+  <input type="password" name="securePassword" id="securePassword" required minlength="5" formControlName = "securePassword">
+
+  <button type="submit" [disabled]='!form.valid'>Inscription</button>
+</form>

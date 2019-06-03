@@ -1,0 +1,10 @@
+<section [ngClass]="{'is-playing' : playingStatus > 0}">
+  <button class="tap-button" (click)="click()" [ngClass]="{'is-active' : isActive}">
+    <img src="assets/tapOff.png" alt="">
+    <img src="assets/tapOn.png" alt="" class="btn-on">
+  </button>
+
+  <div class="progress-container">
+    <div class="progress-inner"></div>
+  </div>
+</section>
